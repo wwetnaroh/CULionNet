@@ -63,9 +63,7 @@ def create_user(userName, major, headline, linkedin, github, courseList,img, edi
         dynamo_db_client = get_db()
         table = dynamo_db_client.Table('userProfile')
 
-        # response=table.get_item(Key={'code':code})
-        # thread=response['Item']
-        # id = setID(course)
+     
         if editImg:
             table.put_item(
                 Item={
@@ -121,14 +119,7 @@ def lambda_handler(event, context):
     # need to get user name, courselist and operation to implement the logics
     print('event is', event)
 
-    # userName = 'wt'#event['user']
-    # major = 'EE'#event['major']
-    # linkedin = 'linkedin.com/in/wu-tong-7442501b3'#event['linkedin']
-    # github = 'https://github.com/WTnicolas'#event['github']
-    # courselist =['4113', '4815', '6889', '6998'] #event['courselist']
-    # operation = 'edit' #event['operation']
-    # headline = 'incoming sde' #event['headline']
-    # event is {'user': 'gxt', 'major': '', 'headline': '', 'linkedin': '', 'github': '', 'courselist': [], 'operation': ''}
+  
 
     userName = event['user']
     major = event['major']
@@ -150,18 +141,7 @@ def lambda_handler(event, context):
     elif operation == 'edit':
         create_user(userName, major, headline, linkedin, github, courselist, img, editImg,email)
 
-    # userName = event['user']
-    # major = event['major']
-    # linkedin = event['github']
-    # courselist = event['courselist']
-    # operation = event['operation']
-    # headline = event['headline']
-    # #event is {'user': 'huiyanxing', 'major': '', 'linkedin': '', 'github': '', 'courselist': ['6998', '6889']}
-    # if operation == 'add':
-    #     create_user(userName)
-    #     add_course(userName, courselist)
-    # elif operation == 'delete':
-    #     del_course(userName, courselist)
+
 
     return {
         'statusCode': 200,
