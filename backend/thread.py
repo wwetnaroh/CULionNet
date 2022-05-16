@@ -6,18 +6,14 @@ def lambda_handler(event, context):
     print(event)
     # database=event[]
     database = event['topic_name']
-    # createtime=event['t']
-    # title=event['title']
+   
     
     db=boto3.resource('dynamodb')
     table=db.Table(database)
     response=table.scan()
     thread=response['Items']
     print(thread)
-    # content=thread[0]['content']
-    #print(content)
-    # thread_name=[]
-    # id=[]
+  
     concept=[]
     
     for i in range(len(thread)):
@@ -26,8 +22,7 @@ def lambda_handler(event, context):
         dict['id']=thread[i]['id']
         dict['topic']=thread[i]['topic']
         concept.append(dict)
-        # thread_name.append(thread[i]['thread name'])
-        # id.append(thread[i]['id'])
+     
         
         print(thread[i]['thread name'])
     
