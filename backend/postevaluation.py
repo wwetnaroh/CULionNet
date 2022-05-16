@@ -25,15 +25,7 @@ def load_data_into_dynamo_db(row, database):
 def lambda_handler(event, context):
    
     
-    # course='COMS6998'
-    # # code='COMS6998'
-    # user='Jerry'
-    # comment='very good'
-    # gpa='4.0'
-    # workload='3.8'
-    # assessment_type='report'
-    # semester='2021fall'
-    # time=event[]
+   
     dynamo_db_client = get_db()
     table=dynamo_db_client.Table('course_list')
     table2=dynamo_db_client.Table('userProfile')
