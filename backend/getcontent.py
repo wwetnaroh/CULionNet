@@ -1,20 +1,11 @@
 import json
 import boto3
-# def get_db():
-#     """
-#     get db client
-#     :return:
-#     """
 
-#     db = boto3.resource('dynamodb', region_name='us-east-1', aws_access_key_id=ACCESS_ID,
-#                         aws_secret_access_key=ACCESS_KEY)
-#     return db
 def lambda_handler(event, context):
     # TODO implement
     print(event)
     
-    # database='Job_hunting'
-    # id='hello world2022-4-30-1651353975963'
+  
     
     database=event['db']
     id=event['id']
