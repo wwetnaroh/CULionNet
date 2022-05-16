@@ -5,3 +5,4 @@ CU Lion Net system is built using vue as front end, python and lambda function a
 <img src="./system.png"></img>
 
 # Video Demo
+[![IMAGE ALT TEXT](./firstpage.png)](https://youtu.be/lwQHW5mDAkU" "YOUR_VIDEO_TITLE")
