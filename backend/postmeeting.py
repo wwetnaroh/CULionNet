@@ -28,10 +28,6 @@ def lambda_handler(event, context):
     time=event['time']
     plan=event['description']
     
-    # user='Alice'
-    # date='2022-4-25-1656'
-    # plan='prepare for final exams'
-    # time='16:30'
    
    
     dynamo_db_client = get_db()
@@ -40,13 +36,11 @@ def lambda_handler(event, context):
     meeting=response['Items']
     print(meeting)
     
-    # dynamo_db_client = get_db()
+   
     table2=dynamo_db_client.Table('meeting')
     
     
-    # mid=[]
-    # for i in range(len(plan)):
-    #     mid.append(set_mid(plan[i],date[i]))
+ 
     a=set_mid(plan,time)
     mid=[a]
     try:
