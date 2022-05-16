@@ -28,14 +28,7 @@ def lambda_handler(event, context):
     new_comment=event['new_content']
     replier=event['replier']
     t=event['time']
-    # t2=event['']
-    
-    # database='Job_hunting'
-    # id='Amazo1650912524'
-    # new_comment='test 3'
-    # replier='Jerry'
-    # t='2022-1458'
-    
+   
     dynamo_db_client = get_db()
     table=dynamo_db_client.Table(database)
     
